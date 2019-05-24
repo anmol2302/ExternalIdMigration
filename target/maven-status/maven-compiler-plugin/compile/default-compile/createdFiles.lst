@@ -1,0 +1,6 @@
+LoggerFactory.class
+CsvManager.class
+ExternalIdMigration.class
+HttpClient$1.class
+RequestParms.class
+HttpClient.class

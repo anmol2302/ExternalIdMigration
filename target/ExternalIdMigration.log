@@ -1,0 +1,911 @@
+2019-05-23 18:05:29 INFO  ExternalIdMigration:18 - ExternalIdMigration : main:all provided params verified
+2019-05-23 18:05:29 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:05:29 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run1, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:05:30 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:30 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiJiYTkxMWMxMS1hMGFlLTRlOGMtYmRkZS1jMDUwOGZmNjI3ZWYiLCJleHAiOjE1NTg2NTA5MzAsIm5iZiI6MCwiaWF0IjoxNTU4NjE0OTMwLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6MzExYjU4OWUtNDliZi00YzgzLThkZjUtOTg0N2Q2OWM5YTQ5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMzhlMTc5M2MtZWIzMS00ZTQ3LTg5ZTQtZjA1ZDVlY2Q3OTI3IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4gMSIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjEiLCJnaXZlbl9uYW1lIjoicnVuIiwiZmFtaWx5X25hbWUiOiIxIiwiZW1haWwiOiJydW4xQGdtYWlsLmNvbSJ9.EVP92rZtAZR5ZYgxwT2v4K61jk6zRFnqp6l31JuWXeHN1BaNnK89iQZFq2EQ12adETTx1q4CiKYJcLz4Wge3kHzcKlBQGqHVSJ3-Ue64D_tbtE2LJZpKn18PvjaIJ6F0aBR6A1uhkFj6nWBd05BmVZnORckspWeL4mHs64-9uBEaN-9G-9ydZ7D4HtXUd4bl9hamFH_fFj8F97SU5UPU8uYpo7XlSWyk8YcR28ph5SX67smdD41JbvAt8-4UtEPkfz87v3BzMZFHz21ftNyP5z2sk0YN_wOiKfkrpg6adpC4cy9mJbrw3Rg7yf3cqv5Ebl_eCBQg7RuCXHZjGvoPSw
+2019-05-23 18:05:30 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=tu1}], userId=311b589e-49bf-4c83-8df5-9847d69c9a49}}]
+2019-05-23 18:05:30 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:05:30 INFO  HttpClient:49 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:30 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:05:30:217+0530","params":{"resmsgid":null,"msgid":"681ee3db-9991-4098-b828-e014c261007e","err":null,"status":"success","errmsg":null},"responseCode":"OK","result":{"response":"SUCCESS","errors":[]}}
+2019-05-23 18:05:30 INFO  CsvManager:96 - User successfully updated with userName: run1
+2019-05-23 18:05:30 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:05:30 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run2, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:05:30 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:30 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiI5MTMzODgzNi00MTQzLTQ3ZTAtODk4YS1iMDljZDNhMWM2NzEiLCJleHAiOjE1NTg2NTA5MzAsIm5iZiI6MCwiaWF0IjoxNTU4NjE0OTMwLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6MTQ1OWE5YWItOWMxMy00OTYyLTk3OTQtN2IwZjk1MGQzODAxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMDViZWQ0Y2QtOTE4Yy00YjU5LWJmYmUtMGVjMTM4MGQwMDRhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4gMiIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjIiLCJnaXZlbl9uYW1lIjoicnVuIiwiZmFtaWx5X25hbWUiOiIyIiwiZW1haWwiOiJydW4yQGdtYWlsLmNvbSJ9.kiIZc-otCjDnibknmLu5vo7fsCbgjDttiP6UJuUHeS3TMy2lqOYu-Lv09Q-Z47A-2mPPYbyM1iFQYQl-OT90mXteRPZM3y-mWIr0zX6t2tVr0DmQY-oo-St4FR6mxK9BJ6ppr1Y2egc6DLXYGCG6YrkTZ4H7wnCN0yQGpvwubZQPo4MueGXLviyj7lVtRb0-AcwUL71B3eCsVQCQ06nmpeJHz1ANl2jYUpufmm7VXg6PV9UewvPEeqGC8eZRvD4P7oMYJ4PtT_Agf14bRfYMVmOFi-rFIlj8Avv_G6VC_lkr4BE7Drmq5mLPWPDLwqsHYcPWAkqhtdOUR8PlvsZNhA
+2019-05-23 18:05:30 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=tu2}], userId=1459a9ab-9c13-4962-9794-7b0f950d3801}}]
+2019-05-23 18:05:30 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:05:30 INFO  HttpClient:49 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:30 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:05:30:775+0530","params":{"resmsgid":null,"msgid":"d62dd7ae-0335-46a4-9481-31bb18d17b3e","err":null,"status":"success","errmsg":null},"responseCode":"OK","result":{"response":"SUCCESS","errors":[]}}
+2019-05-23 18:05:30 INFO  CsvManager:96 - User successfully updated with userName: run2
+2019-05-23 18:05:30 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:05:30 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run3, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:05:31 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:31 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiJiMDkzNDA2ZS1mNDliLTQ1ODAtYTBjMy0xMDAxMTdhY2Y4NmMiLCJleHAiOjE1NTg2NTA5MzEsIm5iZiI6MCwiaWF0IjoxNTU4NjE0OTMxLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6NjE4NzFjNGUtMTJiNy00MDk4LTllZTctM2I3YjViYmU5MmQ5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiYjkzNTA1NDAtMTRlZi00NzE2LWJkZmQtMTNjZDg2YTU4NWIzIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4gMyIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjMiLCJnaXZlbl9uYW1lIjoicnVuIiwiZmFtaWx5X25hbWUiOiIzIiwiZW1haWwiOiJydW4zQGdtYWlsLmNvbSJ9.0wCMpsmhwIPnX0QDAliVOKSg3xxwiRI0gNBE9zUMTMYeIMHTEP8kQuWokHJkUWGIBer9YMIUEHL1HUrOs5_KGWaFT60Z9dRsyHMzdUODnk7DICyPTXM4Wj_jUvUVnaJvFNHin4sSQl4hAQviiStyiSNtB2HuKpJ6V8BZJ0uPF2t46LDVl3H1ZhlCnvNHX4QRpuNMoYo_uwn_Q0W4-2ObR1ZlrLlLGJhRYLahn_zVdqWbfztLG7nvKIDrRl4-RYZc3lZaqMqz2WSVpV4Z_XLrXVKog1_oIW7-1xOfNwmQcD5TKtgtBSgzWRkdgmpFuCcubqvmTMiEMHltuJKpvNC_Gg
+2019-05-23 18:05:31 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=tu3}], userId=61871c4e-12b7-4098-9ee7-3b7b5bbe92d9}}]
+2019-05-23 18:05:31 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:05:31 INFO  HttpClient:49 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:31 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:05:31:355+0530","params":{"resmsgid":null,"msgid":"b8d6088b-174c-4180-a6d2-cc18a080f7e9","err":null,"status":"success","errmsg":null},"responseCode":"OK","result":{"response":"SUCCESS","errors":[]}}
+2019-05-23 18:05:31 INFO  CsvManager:96 - User successfully updated with userName: run3
+2019-05-23 18:05:31 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:05:31 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run5, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:05:31 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:31 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiJkYTE2MDFhNC0yNTc2LTQ3MjMtOTg5Yi05ZmMyMmRkZTYzOTYiLCJleHAiOjE1NTg2NTA5MzEsIm5iZiI6MCwiaWF0IjoxNTU4NjE0OTMxLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6YTFlOWQzMDAtOTA1MS00N2E0LTk0NDEtNDk2NjU5Mzg0YzRhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiYmI5ZjEwNDUtODQxYS00YzA5LWFiYWItN2JkNzEyMjJhNTkyIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4gNSIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjUiLCJnaXZlbl9uYW1lIjoicnVuIiwiZmFtaWx5X25hbWUiOiI1In0.1lU5DFqq5XexF-Gyzbc_CGiNzJ31Za69SclwkMPHSeVaazQ8DJQExv5uT3nHu8I0a3fOFd0eq3IbNaf21qtUfx-jmHV6nfcKVt0hsGnteyNaEsMS35uyG3PAg8tnX_IHaaPUIgNxe0nAI287z0DepBBDacp_Pw7s1nY3PKHNeIS0UnlERIO9kc_hr3hFIn9kv_QiS8NRLBKrDbBXePhz7dxNZVt2beH1O-1WCeVM08cckLD3-Op1xELSyY-jcPOkoNUh5dgsdzedzCmNFsaywlgS6WkzmbNQZEIhneLy4l6F8TnPKuna3hB9r7DOe3H0BEAz0hXRRzfvvgEKmrImkg
+2019-05-23 18:05:31 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=tu5}], userId=a1e9d300-9051-47a4-9441-496659384c4a}}]
+2019-05-23 18:05:31 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:05:31 INFO  HttpClient:49 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:31 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:05:31:994+0530","params":{"resmsgid":null,"msgid":"d62dd7ae-0335-46a4-9481-31bb18d17b3e","err":null,"status":"success","errmsg":null},"responseCode":"OK","result":{"response":"SUCCESS","errors":[]}}
+2019-05-23 18:05:31 INFO  CsvManager:96 - User successfully updated with userName: run5
+2019-05-23 18:05:31 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:05:31 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run7, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:05:32 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:32 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiI4MGM3NjJjMC02Mzk0LTQxOWEtOGMyMC0xODc0MDhiNjMwNmQiLCJleHAiOjE1NTg2NTA5MzIsIm5iZiI6MCwiaWF0IjoxNTU4NjE0OTMyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6OGU3MzFlMzktMmJlMi00ZDRjLWE1ZjgtNGEzMzAxMTJjY2Y5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMDBkMjVhOGEtM2IyYS00Y2M1LTkwOWEtZWNiOGIyZjllMmMxIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW43IEt1bWFyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnVuNyIsImdpdmVuX25hbWUiOiJydW43IiwiZmFtaWx5X25hbWUiOiJLdW1hciJ9.fq29Ptk1f-STjJPmfjkxywoeSz8DETE9kfBL17xHs_eeOAGibW8HFAKSbOZJOMXrT6NDhU2bLKnPIIxmalc3oJetg5G_YbYZK_KMgQBHEdkHga4ba4ZGy_cPVMvuGRa8hgU9Wbe5nSqxOhZEM7UbbUtaSmLkRRa4g4mdHKoYU7U3LQKy5h5DON2hdini7lYwuISyYZwhodaRDLiHcrZcsGFL-kmJPlRnSw1UXVk-xpyiBM5JuITdsjDuMDyVunQLX-uU1M7g9saWVJK-94MrvXMM9PPBON987cb9Ujuw1aDEd9p-G4RUnTKTG98RB1rSu0RpB2yi7W8debjBBzVf5g
+2019-05-23 18:05:32 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=ext12}], userId=8e731e39-2be2-4d4c-a5f8-4a330112ccf9}}]
+2019-05-23 18:05:32 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:05:32 INFO  HttpClient:49 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:32 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:05:32:617+0530","params":{"resmsgid":null,"msgid":"b4be868c-c8e8-4b05-8fa8-733abd15eee3","err":null,"status":"success","errmsg":null},"responseCode":"OK","result":{"response":"SUCCESS","errors":[]}}
+2019-05-23 18:05:32 INFO  CsvManager:96 - User successfully updated with userName: run7
+2019-05-23 18:05:32 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:05:32 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run11, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:05:33 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:33 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiI0ZmIzMTA2Yi03Zjc2LTRkMjItYTRjOS1mZjg4ZWIzMDllOTUiLCJleHAiOjE1NTg2NTA5MzMsIm5iZiI6MCwiaWF0IjoxNTU4NjE0OTMzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6MjJhMWE3YWYtYTAyOC00NzMxLWJlNTktY2M4ZDQwY2M0MTQzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiOTk1MDVhMDQtZmMxOC00OTRhLWFkYTUtYjE3MjEwYjA1YTk0IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4xMSBLdW1hciIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjExIiwiZ2l2ZW5fbmFtZSI6InJ1bjExIiwiZmFtaWx5X25hbWUiOiJLdW1hciJ9.vud3lTvAbjfJhITBTTHgvSGNKNzbBtPUErfQZy82D4NhYjC-GOV9tjd8LtUsXPI2U5IJi-r1OswTRGbBtXCjOXytv_rAWyCu1bOCUlPXXj7vhMqIn9x7zC753Fj1yWljL8FE14OK0SJfJ5Go4a8doWZ5AFVVZncnSnR2ca3zTDnYbFyCj1pUoUVLBjtj0ztdKdm0sguwmbM5lPZl9AJBLltLLMp2tnPCx4e2BeFJG079MuAz8SS6ihMl9u1Y1qmPn6RQCjFK_3HwKCCZ3gQQLVlr4bgkchCDs-FTaEMt7EhoWn0IQ1e_yhYxJY-scsVcBCWa1nBKoVVyb4aqiICoWQ
+2019-05-23 18:05:33 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=ext11}], userId=22a1a7af-a028-4731-be59-cc8d40cc4143}}]
+2019-05-23 18:05:33 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:05:33 INFO  HttpClient:49 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:33 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:05:33:246+0530","params":{"resmsgid":null,"msgid":"dc0a9ebc-6742-481a-95fc-842d617a2680","err":null,"status":"success","errmsg":null},"responseCode":"OK","result":{"response":"SUCCESS","errors":[]}}
+2019-05-23 18:05:33 INFO  CsvManager:96 - User successfully updated with userName: run11
+2019-05-23 18:05:33 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:05:33 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run12, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:05:33 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:05:33 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiIwNjU0NzFjMC02Nzc0LTQ1OWYtYThkNy1mYTU1ZWZhMDM4ZWEiLCJleHAiOjE1NTg2NTA5MzMsIm5iZiI6MCwiaWF0IjoxNTU4NjE0OTMzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6MzMxYzI1MWQtMGM1Ni00MmJiLWEyMGItZDFkMTZjYTgyNWU4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMWMyNDAyNWUtMDhiOS00NjBkLTkxZjgtNmNlNWI0MDYxYzEzIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4xMiBLdW1hciIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjEyIiwiZ2l2ZW5fbmFtZSI6InJ1bjEyIiwiZmFtaWx5X25hbWUiOiJLdW1hciJ9.wS0u4GzhAYpr27GPu9ShN-_ssKjqgkmuKWT0fSzs5bIPatySDdNeaJA8HQZXhiQ6nFHfb7IeMRe7gsjjRXbeF96eOHl1KxXUPzpEJlQdN0dlfl-h7DTZdnvu404fgISxiPhCFbcBuHTkkv2xGlB21wCc4cGqAy2IJXVyNuDO80McS5k901V7JoBJpJGpv7qUxqVwQFRHmLHqHbjMqUa8BlqctN23dCNG78lTck2r_znj0uPqXGF1WmqYOUNJTE8DPzxW8cWDxMJ9APr2jKIZEia29W-Xf-xw8CLyFNjgTAOaX58gX-ksfpkf99MJ9Pz1TMXtrkpEd2YnqGEMnWKtvQ
+2019-05-23 18:05:33 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=ext12}], userId=331c251d-0c56-42bb-a20b-d1d16ca825e8}}]
+2019-05-23 18:05:33 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:05:33 INFO  HttpClient:49 - HttpClient:post: statusCode = 400
+2019-05-23 18:05:33 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:05:33:835+0530","params":{"resmsgid":null,"msgid":"a96726da-b15a-4c89-bcaf-136777070ce1","err":"EXTERNALID_ASSIGNED_TO_OTHER_USER","status":"EXTERNALID_ASSIGNED_TO_OTHER_USER","errmsg":"External ID (id: ext12, idType: channel_0001, provider: channel_0001) already assigned to another user."},"responseCode":"CLIENT_ERROR","result":{}}
+2019-05-23 18:05:33 INFO  CsvManager:129 - Writing failed record Failed to Update Record with userName run12 and userId331c251d-0c56-42bb-a20b-d1d16ca825e8 and error Message is {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:05:33:835+0530","params":{"resmsgid":null,"msgid":"a96726da-b15a-4c89-bcaf-136777070ce1","err":"EXTERNALID_ASSIGNED_TO_OTHER_USER","status":"EXTERNALID_ASSIGNED_TO_OTHER_USER","errmsg":"External ID (id: ext12, idType: channel_0001, provider: channel_0001) already assigned to another user."},"responseCode":"CLIENT_ERROR","result":{}}
+2019-05-23 18:05:33 INFO  CsvManager:56 - Connection Closed
+2019-05-23 18:25:39 ERROR ExternalIdMigration:25 -  ExternalIdMigration: main: please provide all 5 input params csvFileInput, baseUrl,realm,clientId,apiKey
+2019-05-23 18:25:45 ERROR ExternalIdMigration:25 -  ExternalIdMigration: main: please provide all 5 input params csvFileInput, baseUrl,realm,clientId,apiKey
+2019-05-23 18:26:00 INFO  ExternalIdMigration:18 - ExternalIdMigration : main:all provided params verified
+2019-05-23 18:26:00 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:00 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run1, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:01 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:01 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiIxZjkxNzBlNC1hZTg4LTQ1YWItOTMwMy0zYWM5Y2JhNzk1M2QiLCJleHAiOjE1NTg2NTIxNjEsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTYxLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6MzExYjU4OWUtNDliZi00YzgzLThkZjUtOTg0N2Q2OWM5YTQ5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiYjdmNmE2OWQtOTkxMC00YjQwLWFmN2ItNTQwODU4MTc2MGU4IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4gMSIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjEiLCJnaXZlbl9uYW1lIjoicnVuIiwiZmFtaWx5X25hbWUiOiIxIiwiZW1haWwiOiJydW4xQGdtYWlsLmNvbSJ9.MXIZ1QA9NQhh7_8RoO6ToNEgrzIGd_c4GFhSnVZxHGXOL1IjleXqdnJWhG6XWzltOimnTBFCa8I9Kh8kiWDrpxjVQyPFGg997k4JRqAujIms_7JRJRbKthMvAmKZT9YtLY0_j3WlPV-f4Hj1-gRTt028fAWVs9nO0ir9DBaffEqss1YOa7DZONw-7lfoeuqOYrjKTpqrHVkj9y1pjQBp4pczozOdNHjohRxF90bmzRnqmKzvkX1N6Ymqi9IfDnPFozWHitIK6vaCaVx9gpre3k4voa_pa0KH-jaYyqmolQwaYq67JaXthIbkD6qNd9aiCpzgxzjPoO_19osgc3J-iQ
+2019-05-23 18:26:01 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=tu1}], userId=311b589e-49bf-4c83-8df5-9847d69c9a49}}]
+2019-05-23 18:26:01 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000v1/user/update
+2019-05-23 18:26:01 INFO  HttpClient:49 - HttpClient:post: statusCode = 404
+2019-05-23 18:26:01 INFO  HttpClient:50 - Response From userUpdate: 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:01 INFO  CsvManager:129 - Writing failed record Failed to Update Record with userName run1 and userId311b589e-49bf-4c83-8df5-9847d69c9a49 and error Message is 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:01 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:01 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run2, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:02 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:02 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiJjYjVhYWVhYi03ODhlLTQ4ODctYWI4Yi01Y2I5ZTcyYTNkOTQiLCJleHAiOjE1NTg2NTIxNjIsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTYyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6MTQ1OWE5YWItOWMxMy00OTYyLTk3OTQtN2IwZjk1MGQzODAxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiZmU1OWUwMGQtNjNlYS00YWJkLWExNjYtZjI4MDRmOWNhODhhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4gMiIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjIiLCJnaXZlbl9uYW1lIjoicnVuIiwiZmFtaWx5X25hbWUiOiIyIiwiZW1haWwiOiJydW4yQGdtYWlsLmNvbSJ9.0cESabWTWzyZKnung8pf95eEPCBZQUrm9uFdeUXMuoGa5tz8-H7O1r7CXigtjmBeQKs2VoJytlhTl2MNzmeXhM8oLCU6gVU_X1ypciNETR-JHGB_PUTsz-oHc108HzYBKIJ-BWuv9NzGfFCEz0B4ZyGyXWSVIEQs1McpZ1rVgPbbLlHUKezUn12pDEo1cz_lI6txGHTHbDueJQA3ZWTWQhxXutOflvDxTGjeAf_XRGwxVSWQEvvccpd3IcZAIT9Ez2OzxxuCZPZgO9SjB0EEUIruL2NoUBaxrD6eLMP7VLFfFhKSH0jCEUKSleW8y75Wp7WhfbW7qQE95AVSd5F8xQ
+2019-05-23 18:26:02 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=tu2}], userId=1459a9ab-9c13-4962-9794-7b0f950d3801}}]
+2019-05-23 18:26:02 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000v1/user/update
+2019-05-23 18:26:02 INFO  HttpClient:49 - HttpClient:post: statusCode = 404
+2019-05-23 18:26:02 INFO  HttpClient:50 - Response From userUpdate: 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:02 INFO  CsvManager:129 - Writing failed record Failed to Update Record with userName run2 and userId1459a9ab-9c13-4962-9794-7b0f950d3801 and error Message is 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:02 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:02 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run3, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:02 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:02 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiIzOTlmYTBhNC0wYjVhLTQ4N2MtYmFmNi0wYjRkM2RmNzg1ZmUiLCJleHAiOjE1NTg2NTIxNjIsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTYyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6NjE4NzFjNGUtMTJiNy00MDk4LTllZTctM2I3YjViYmU5MmQ5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNTExOTQ4MjMtMzcyZC00OGI2LWE5ZTEtNjU3ODMwMGNlNmJiIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4gMyIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjMiLCJnaXZlbl9uYW1lIjoicnVuIiwiZmFtaWx5X25hbWUiOiIzIiwiZW1haWwiOiJydW4zQGdtYWlsLmNvbSJ9.q-8LZrpaxcs1FcnLvANhSBrkllREQeiuJSBY2xi9oxCIDYrxUIAhkES2w3zgPfAxfzdyAEe5-rY837QQD9BtjQ3yHPTYfIgGX1-fcUMegucXhDGICJLJLttLLcnZZmCaVjVwa7yvG18LgonZvOsWGmBJf2RgglaR-MBynn6S5jZlhvrziwDg1noBcGpBa0D4R90WyeSYVDNOUIDeC598wWy427m0UllhtXHUZrobJ-Z-X19rg9ggHTQH6TbQMbPIeJqjNc6pL6W2tXGZbhGWQDNkGww0IhpgbamHkLFPw5ZTG6RtGHLH9r1IXQ3Sgs7EsChTQrBYIk8g7dETuRwUzQ
+2019-05-23 18:26:02 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=tu3}], userId=61871c4e-12b7-4098-9ee7-3b7b5bbe92d9}}]
+2019-05-23 18:26:02 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000v1/user/update
+2019-05-23 18:26:02 INFO  HttpClient:49 - HttpClient:post: statusCode = 404
+2019-05-23 18:26:02 INFO  HttpClient:50 - Response From userUpdate: 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:02 INFO  CsvManager:129 - Writing failed record Failed to Update Record with userName run3 and userId61871c4e-12b7-4098-9ee7-3b7b5bbe92d9 and error Message is 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:02 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:02 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run5, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:03 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:03 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiI0ZmE0ZDhiOC00ZTQ3LTQ4NDYtYmIyOC04MDc4NjhiNThiNTUiLCJleHAiOjE1NTg2NTIxNjMsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTYzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6YTFlOWQzMDAtOTA1MS00N2E0LTk0NDEtNDk2NjU5Mzg0YzRhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMWQ5OTU2MWMtMjljMC00ZDFhLWIxZDktOTBjMjYzYzU0ODM3IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4gNSIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjUiLCJnaXZlbl9uYW1lIjoicnVuIiwiZmFtaWx5X25hbWUiOiI1In0.h-uo2cQqfQpFVuhBJ6qe0AWOs9x5aFfdv1gUAaYQ9lvEbNUr2NdlZJWB1NCJDtBTgMuTxFusB6xzjAbKzIoTR6Fq3zucUNurzgYgnR5AIU3AYhzfHpuMfvjq2l5MnS6hXAvK-1bwFwd3JZXQGlnUpp1uby1-8o094BZQo3MiEYDRyCXjq2OJa0FTMwXJBuK8WSJyYydZAAeUimfPYTwkUQR8y20ZGw8_q17e1n1yqlP99uzH-02gmwocmMpf0ZglBAr-FDh_UdkM3F9y4uocS2T4sso_FNQN3zdpkKoANGUJbtKBU4IMfgYTrLQbh7AB1uzWXCe5kmTXV5Q1BZX_yg
+2019-05-23 18:26:03 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=tu5}], userId=a1e9d300-9051-47a4-9441-496659384c4a}}]
+2019-05-23 18:26:03 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000v1/user/update
+2019-05-23 18:26:03 INFO  HttpClient:49 - HttpClient:post: statusCode = 404
+2019-05-23 18:26:03 INFO  HttpClient:50 - Response From userUpdate: 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:03 INFO  CsvManager:129 - Writing failed record Failed to Update Record with userName run5 and userIda1e9d300-9051-47a4-9441-496659384c4a and error Message is 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:03 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:03 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run7, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:03 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:03 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiI4MTVmZjViZC1lMGQxLTRmMWQtYTNkZi05MGExYjEyZTVkZWUiLCJleHAiOjE1NTg2NTIxNjMsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTYzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6OGU3MzFlMzktMmJlMi00ZDRjLWE1ZjgtNGEzMzAxMTJjY2Y5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiZTg0OWI4OGQtZmFkNC00OTc5LWFlMTYtMGY1Mzc4ZDA0YzI5IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW43IEt1bWFyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnVuNyIsImdpdmVuX25hbWUiOiJydW43IiwiZmFtaWx5X25hbWUiOiJLdW1hciJ9.gf2hukrkTMCxsx3rxfjgke7jpsMITj3eJv0wBkEPMYW-x0RBRQM0ibtoi_6EcGDvviVRqn9wZdLDUPhEDHNjGDkF170r-UgWm9XlTJ89DyuTHWAH4SsvEy29SjCMgY6I7_u1xjA8K-QxicIMZGr2l51xjyrTw9xGqZqKDmZzy-u8bRmkZLhEAMNkT03_y5gzi9_d8SL6QttBavVGNESd9sdDpN7LsX5LZXZ2lw1IdCV2_KbCn5MteGPCytl_iiKPrJFviLl9VOYyCNeyeRI9HWpMarLQ18TFLroiV1EwOkADtFWfdfTB6R6HRYq16tV3dHrx61Cms2rie7cDuTA1Aw
+2019-05-23 18:26:03 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=ext12}], userId=8e731e39-2be2-4d4c-a5f8-4a330112ccf9}}]
+2019-05-23 18:26:03 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000v1/user/update
+2019-05-23 18:26:03 INFO  HttpClient:49 - HttpClient:post: statusCode = 404
+2019-05-23 18:26:03 INFO  HttpClient:50 - Response From userUpdate: 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:03 INFO  CsvManager:129 - Writing failed record Failed to Update Record with userName run7 and userId8e731e39-2be2-4d4c-a5f8-4a330112ccf9 and error Message is 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:03 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:03 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run11, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:04 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:04 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiI1NTQ2ZWRlOC1kMjU5LTQ2OGQtYjI1OC0xODJiM2M0ZDhkZDAiLCJleHAiOjE1NTg2NTIxNjQsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTY0LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6MjJhMWE3YWYtYTAyOC00NzMxLWJlNTktY2M4ZDQwY2M0MTQzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiYTkzNjM4MzMtMzc1YS00MTVmLTk3ZGMtNTJjMjViNjgxNWM3IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4xMSBLdW1hciIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjExIiwiZ2l2ZW5fbmFtZSI6InJ1bjExIiwiZmFtaWx5X25hbWUiOiJLdW1hciJ9.sDk3glICXg-Ld_7zDB8HA7H3LNmx2yBX-z4dC15e2fFxyvkEcSpb9aGK4ZbbJ47W0GXFBZs873zO0EINVUZsaznMRJ7FZCeHUMqDp36HThwik8Yq8H9Kb6Ae_Gg_j8Rn2dpy0BhXnp9KdkHadEXrhOdvtZds-mpd15o_seitBkTaZTTBzZycXh-y1l5T84mYqcWwbMkQJvJGHLM9f14xK7ihIYgVspF_SVtkSPHbWHzc_DMV90XgkjpEkoVN0rtiTh-4q1_P6AdNGZGeO8Gv6qpln_GUPQAW-d4qVbg88S-YJ0lTiEVrFJ6Vxth5iesmZynz_ZgX-ED2ApsIj-zF4w
+2019-05-23 18:26:04 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=ext11}], userId=22a1a7af-a028-4731-be59-cc8d40cc4143}}]
+2019-05-23 18:26:04 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000v1/user/update
+2019-05-23 18:26:04 INFO  HttpClient:49 - HttpClient:post: statusCode = 404
+2019-05-23 18:26:04 INFO  HttpClient:50 - Response From userUpdate: 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:04 INFO  CsvManager:129 - Writing failed record Failed to Update Record with userName run11 and userId22a1a7af-a028-4731-be59-cc8d40cc4143 and error Message is 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:04 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:04 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run12, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:04 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:04 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiI0MjU5YjVlZS1iMDBjLTQ0YjctODVlOS01MTRkYjAyM2ZiNzIiLCJleHAiOjE1NTg2NTIxNjQsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTY0LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6MzMxYzI1MWQtMGM1Ni00MmJiLWEyMGItZDFkMTZjYTgyNWU4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiZjFkZTg3ODEtOTA3YS00YWY1LWExZGQtMmQ0ODczYmM3Njc0IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4xMiBLdW1hciIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjEyIiwiZ2l2ZW5fbmFtZSI6InJ1bjEyIiwiZmFtaWx5X25hbWUiOiJLdW1hciJ9.XL7rhHeYGV1GcWtIPMQdi2y-6Z0Nvx8GrDJTYU2Ut8wK2bmYnINyKwnU75J7cG2lASSmvbO0W2B2w3d2OOE6tNJoYZq7raZSpeT9vPElhrtmOEtBAuANsm2wUOMFpzL7mFBG2lj0AWqfgOnVyVd6F19PeupsI3x0nv5shQwlayx5P8xx2yCggvpXXKLWE8fXmbvGKB-_bCH6A5hEw0UVYr2avR2zB43iMgbq8p6961gU7boTul61h9jd4mbNB49TigFrMcFcdTz34r0Nfo8J1hJqyKfTxxjtLxaMEvH-6zHZsllv09Z_y5Muynfwx6vQBKnBOtJ7PJtyLDUai0bSQQ
+2019-05-23 18:26:04 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=ext12}], userId=331c251d-0c56-42bb-a20b-d1d16ca825e8}}]
+2019-05-23 18:26:04 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000v1/user/update
+2019-05-23 18:26:04 INFO  HttpClient:49 - HttpClient:post: statusCode = 404
+2019-05-23 18:26:04 INFO  HttpClient:50 - Response From userUpdate: 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:04 INFO  CsvManager:129 - Writing failed record Failed to Update Record with userName run12 and userId331c251d-0c56-42bb-a20b-d1d16ca825e8 and error Message is 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Action not found</title>
+        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+PSv3Aj7DSiP2B0rwkLGVdGgxITSCRIJGSMEQWZR3eVt5sEFBgTb/dN1yvnnHtPNTPG4PqdHgCMXnPRSZrpSuH8vUJu4DE4rYHDGAZDX62BZttHqTiIayM3gGiXQsgYLEvATaqxU+dy1U13YXapXptpNHY8iwn8KyIAzm1KBdtRZWErpI5lEWTXp5Z/vHpZ3/wyKKwYGGOdAYwR0EZwoezTYApBEIObyELl/aE1/83cp40Pt5mxqCKrE4Ck+mVWKKcI5tA8BLEhRBKJLjez6a7MLq7XZtp+yyOawwCBtkiBVZDKzRk4NN7NQBMYPHiZDFhXY+p9ff7F961vVcnl4R5I2ykJ5XFN7Ab7Gc61VoipNBKF+PDyztu5lfrSLT/wIwCxq0CAGtXHZTzqR2jtwQiXONma6hHpj9sLT7YaPxfTXuZdBGA02Wi7FS48YiTfj+i2NhqtdhP5RC8mh2/Op7y0v6eAcWVLFT8D7kWX5S9mepp+C450MV6aWL1cGnvkxbwHtLW2B9AOkLeUd9KEDuh9fl/7CEj7YH5g+3r/lWfF9In7tPz6T4IIwBJOr1SJyIGQMZQbsh5P9uBq5VJtqHh2mo49pdw5WFoEwKWqWHacaWOjQXWGcifKo6vj5RGS6zykI587XeUIQDqJSmAp+lE4qt19W5P9o8+Lma5DcjsC8JiT607lMVkdqQ0Vyh3lHhmh52tfNy78ajXv0rgYzv8nfwswANuk+7sD/Q0aAAAAAElFTkSuQmCC">
+        <style>
+            html, body, pre {
+                margin: 0;
+                padding: 0;
+                font-family: Monaco, 'Lucida Console', monospace;
+                background: #ECECEC;
+            }
+            h1 {
+                margin: 0;
+                background: #AD632A;
+                padding: 20px 45px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+                border-bottom: 1px solid #9F5805;
+                font-size: 28px;
+            }
+            p#detail {
+                margin: 0;
+                padding: 15px 45px;
+                background: #F6A960;
+                border-top: 4px solid #D29052;
+                color: #733512;
+                text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                font-size: 14px;
+                border-bottom: 1px solid #BA7F5B;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Action not found</h1>
+
+        <p id="detail">
+            For request 'PATCH /user/update'
+        </p>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+2019-05-23 18:26:04 INFO  CsvManager:56 - Connection Closed
+2019-05-23 18:26:33 INFO  ExternalIdMigration:18 - ExternalIdMigration : main:all provided params verified
+2019-05-23 18:26:34 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:34 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run1, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:35 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:35 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiI0MzA0NGYxNC1mZmU0LTQyZmItYmIxZi01OTliYjcxNTNiNWIiLCJleHAiOjE1NTg2NTIxOTQsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTk0LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6MzExYjU4OWUtNDliZi00YzgzLThkZjUtOTg0N2Q2OWM5YTQ5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNTU5NGVhMGYtZTE4MS00OGQxLWFiYzctYjQ0OWY4OGI4ZTQ3IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4gMSIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjEiLCJnaXZlbl9uYW1lIjoicnVuIiwiZmFtaWx5X25hbWUiOiIxIiwiZW1haWwiOiJydW4xQGdtYWlsLmNvbSJ9.gVBwl70Kwb9riqwvkwo7b89xCo442_qXHsy7L1tkkJAOoSwSyYzOF23B1PBYoB8OBeMh4qDnBKQxZjYvK1YIwj8aubADpcQXbm_O5OkIuHwbjeiBzcBhQRQR1t9IMDHzmmUEa8rEA0hl_hW9y_IL6JiPnZY7HyLVZwCT445qpk9viLFOU6uGK7r0zSoWybXQzNzBk2ehwqQM6KwbZUw1R6xqz-M-iH91csd_W5Y19_WEzrMDyoqEIU7kl0tXJySDbrfpjjHmZ6KWYw8XoD42vKyacIcvpXAWCGLIRrHIpnNHKfNIJheWYq88LF2T2yHWQ4xgreghLSKylYEeEbYhJw
+2019-05-23 18:26:35 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=tu1}], userId=311b589e-49bf-4c83-8df5-9847d69c9a49}}]
+2019-05-23 18:26:35 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:26:35 INFO  HttpClient:49 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:35 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:26:35:170+0530","params":{"resmsgid":null,"msgid":"a0c77747-026f-4023-a253-3f5d739ff02e","err":null,"status":"success","errmsg":null},"responseCode":"OK","result":{"response":"SUCCESS","errors":[]}}
+2019-05-23 18:26:35 INFO  CsvManager:96 - User successfully updated with userName: run1
+2019-05-23 18:26:35 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:35 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run2, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:35 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:35 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiI4MGM2MDFkZi05YjQ3LTQyZDAtOGUzZi0zNjU0MGZmZGViOTgiLCJleHAiOjE1NTg2NTIxOTUsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTk1LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6MTQ1OWE5YWItOWMxMy00OTYyLTk3OTQtN2IwZjk1MGQzODAxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiOTM1MjRkNGEtNDNjMi00MWQ4LWE5ZDgtMzBkNzAxZDMyMDY0IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4gMiIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjIiLCJnaXZlbl9uYW1lIjoicnVuIiwiZmFtaWx5X25hbWUiOiIyIiwiZW1haWwiOiJydW4yQGdtYWlsLmNvbSJ9.zxI9ZD49FCs5MSH2_2XOQVoDEy_ji6tt_uQ1u5zt0PdWvp3Gu1Yp6h8U4jcK3WcQYTMpGsqaN01NESzmxHLU2RIQRQs6z9K8to4DKKo5F12VBlPMbKRN1cYsvK5pu1EHIogWzbNIvr3_YqjLbTNUYHTfkhpbj6lE0V9Y3oLMXNAzj_w39mHHtZXOIpQ2Hpsj_v_DK7QhdF5iUh0uzOxUsOVQotyQgp7hxnbq7z7jsmu4TPaDZSmhvOX7tRtktpV-gf1KsApvJrnuTkUeFYC0MEyWi51JWew1YSrtJCVhskzhh8UwIBZtBDlNBiC1lBnEMVM2Rakbhq3U4FDBr2-9vA
+2019-05-23 18:26:35 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=tu2}], userId=1459a9ab-9c13-4962-9794-7b0f950d3801}}]
+2019-05-23 18:26:35 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:26:35 INFO  HttpClient:49 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:35 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:26:35:751+0530","params":{"resmsgid":null,"msgid":"591bbee2-fd7c-49b9-bf4d-23646e0f4746","err":null,"status":"success","errmsg":null},"responseCode":"OK","result":{"response":"SUCCESS","errors":[]}}
+2019-05-23 18:26:35 INFO  CsvManager:96 - User successfully updated with userName: run2
+2019-05-23 18:26:35 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:35 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run3, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:36 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:36 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiI1NTY2MWZmYS0yYzBhLTQ1ZjItOWUzYy0zZWU5MjBjNTc0ODUiLCJleHAiOjE1NTg2NTIxOTYsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTk2LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6NjE4NzFjNGUtMTJiNy00MDk4LTllZTctM2I3YjViYmU5MmQ5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNGQ3Njg5M2UtZjZlYS00OTA2LTkwMmQtZGYwNjdkYjdlNTg4IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4gMyIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjMiLCJnaXZlbl9uYW1lIjoicnVuIiwiZmFtaWx5X25hbWUiOiIzIiwiZW1haWwiOiJydW4zQGdtYWlsLmNvbSJ9.09mvkT8dxhWUyDftzZcT6FiJUCzEEbvwMUot9CmY56PfEHFORVuQLh6qHnnlk-Pn9auSUmjl7lCWQcUsuUqYLjIQlXM6w1tAL4FoPlPUlv-LUTZACfZy3YlJS5Ex2CwSG4Xu11BoM3t-aEUlzUapXcR-aQWb88eEggZdQF0qvhOlxZTdxwRvnn072mYYwq9ZuYtTWbCZzRSJHt-TARGF7pt4ZmuJy5QDxtiJ8kQyR8fuudVrQEYcRLSsSghL1K5uudWLlwBKWI5tnJ6c5OM3-biZiPrRoeUj8pOp4Tn9mGqZP9zFAqbnihdFg4uRM7Lrjm-tSHL6O-PgaiabsDpMRg
+2019-05-23 18:26:36 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=tu3}], userId=61871c4e-12b7-4098-9ee7-3b7b5bbe92d9}}]
+2019-05-23 18:26:36 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:26:36 INFO  HttpClient:49 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:36 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:26:36:367+0530","params":{"resmsgid":null,"msgid":"e43a528f-98cd-4886-b757-39176c913703","err":null,"status":"success","errmsg":null},"responseCode":"OK","result":{"response":"SUCCESS","errors":[]}}
+2019-05-23 18:26:36 INFO  CsvManager:96 - User successfully updated with userName: run3
+2019-05-23 18:26:36 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:36 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run5, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:36 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:36 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiIwNDgyZWQxYS04ZWVmLTRmZTAtODdjMi0xZTU5ZWZkNzc4ZmIiLCJleHAiOjE1NTg2NTIxOTYsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTk2LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6YTFlOWQzMDAtOTA1MS00N2E0LTk0NDEtNDk2NjU5Mzg0YzRhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNjYwY2YwNjMtM2I5MC00ODFhLWI0NDgtODRjNDI2ZGU4NWU1IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4gNSIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjUiLCJnaXZlbl9uYW1lIjoicnVuIiwiZmFtaWx5X25hbWUiOiI1In0.2iwohhukS9ALS04Prf7JYpWf26MoPi-kch7AaZ-ey8KvhSZgYmTPrlw2lNv9J73Rh8ch8g64bdMroxaHXRnj12SX0ZYIUB7jR7OVZGB_dYe1imR_5bfM1ALqEKLUKmF5S0oayupCMtNPIe4edTcb_PpDAqCVNRr3ptTLcrr1DErUZutjyttJ8jUsa0rhaOXf3iYFwV1K2wmIb9NfBnUrlKVPb40Mjs6qPe5ordr-jXJE22dBMESBPSTIPPe7S8XnMk6-mQ2JURGuLOBxEivhXww4pvjyFfDz9nHgyluynywV4U8cKfSmEzpI7eUpvWcuF-SMCQ1ok9Ak9i_eiAFMmg
+2019-05-23 18:26:36 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=tu5}], userId=a1e9d300-9051-47a4-9441-496659384c4a}}]
+2019-05-23 18:26:36 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:26:36 INFO  HttpClient:49 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:36 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:26:36:868+0530","params":{"resmsgid":null,"msgid":"6881e0e9-12c8-4ced-b03a-5ff627b90792","err":null,"status":"success","errmsg":null},"responseCode":"OK","result":{"response":"SUCCESS","errors":[]}}
+2019-05-23 18:26:36 INFO  CsvManager:96 - User successfully updated with userName: run5
+2019-05-23 18:26:36 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:36 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run7, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:37 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:37 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiIyMDdlOTkwMi04ODUzLTRhZjgtYmYyNy00MjZkMGE1OWU2MzgiLCJleHAiOjE1NTg2NTIxOTcsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTk3LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6OGU3MzFlMzktMmJlMi00ZDRjLWE1ZjgtNGEzMzAxMTJjY2Y5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMTc5NzM5ZTEtMjhlZS00YjBlLTk0ZjgtYjFlNTRmZjc3MjExIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW43IEt1bWFyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicnVuNyIsImdpdmVuX25hbWUiOiJydW43IiwiZmFtaWx5X25hbWUiOiJLdW1hciJ9.PCPWnnjEqbeTikw5rBStzOuJcV4dUkR_l_u1JokPFRPZ_LWwm3aclLJgphglcjmY999lMxxVAB2uyCWltMFlppE8HeebinFrJFj844EcAt25XCeYCfUj8h-TcYDA31MApB3rAXYSoDjL6KvJ3KivqZE8QNYZXGp1UhhJtYDQRNrFphhVlYY7EID4uu4QmegYYS07W9dpjqy8nAeZkTuxk8i2xX2LwDRPgNNGxZyblZmUxiTRfeTyrijRYlwby8RKkwMFe-WRs6Ub6zYBYZJOcnP7ZqKTprAKlxvabVZpGKj7QDHPf0v8biBAtqTJwBkNhuikDnCio4rS10kQQr8VIw
+2019-05-23 18:26:37 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=ext12}], userId=8e731e39-2be2-4d4c-a5f8-4a330112ccf9}}]
+2019-05-23 18:26:37 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:26:37 INFO  HttpClient:49 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:37 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:26:37:513+0530","params":{"resmsgid":null,"msgid":"01a57055-ffb5-4a68-9c23-ea87c4e92396","err":null,"status":"success","errmsg":null},"responseCode":"OK","result":{"response":"SUCCESS","errors":[]}}
+2019-05-23 18:26:37 INFO  CsvManager:96 - User successfully updated with userName: run7
+2019-05-23 18:26:37 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:37 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run11, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:38 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:38 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiJlZjk2ZjkwYi02ZDUyLTQ5MDItYjQwMy03YTAxNTA4ZTBiYWIiLCJleHAiOjE1NTg2NTIxOTcsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTk3LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6MjJhMWE3YWYtYTAyOC00NzMxLWJlNTktY2M4ZDQwY2M0MTQzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiZjljMTUwNGQtNjE5Yy00M2Q2LTk5ZGUtMDk5YTFiNTJkYTZjIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4xMSBLdW1hciIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjExIiwiZ2l2ZW5fbmFtZSI6InJ1bjExIiwiZmFtaWx5X25hbWUiOiJLdW1hciJ9.h_4XMsMQBI7tyGJaLNq6pv3OYQ9xhgZ9FIMJZQGFaQ1LkPhsgRiQUVFGjjbgU-az_QXxHFVSuhpJ26X7wd0N5qKjIYduWiSFDd_jbtqlzdbp4CGSiZ11j_LtlopyJDxTMYBATJVfgoSLFFQ3GF8AjOhf7Kp9dXL27WmBIyhFdIWDwNsMnR_TaRyEC1FekltotyCj6Fro5KrRS7ab5HWmTAgn7PdK8uyHapfUQTTb6Y5MrID_MuLkIlapdj5Pgm0_lukYiEPR-SRhe1vUTo-nMh0fqfHpQ8_IPizV3phE2Foe-SkFe9Ae--UcsbsfRCMwzf_jk117plZKtT-auZ2FIw
+2019-05-23 18:26:38 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=ext11}], userId=22a1a7af-a028-4731-be59-cc8d40cc4143}}]
+2019-05-23 18:26:38 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:26:38 INFO  HttpClient:49 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:38 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:26:38:046+0530","params":{"resmsgid":null,"msgid":"818bbf2c-6b13-4a00-a4e1-9ee7dd52e487","err":null,"status":"success","errmsg":null},"responseCode":"OK","result":{"response":"SUCCESS","errors":[]}}
+2019-05-23 18:26:38 INFO  CsvManager:96 - User successfully updated with userName: run11
+2019-05-23 18:26:38 INFO  HttpClient:80 - HttpClient:post: uri = http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+2019-05-23 18:26:38 INFO  HttpClient:86 - Httpclient: generateAuthToken: [[username=run12, client_id=admin-cli, grant_type=password, password=password]]
+2019-05-23 18:26:38 INFO  HttpClient:90 - HttpClient:post: statusCode = 200
+2019-05-23 18:26:38 INFO  CsvManager:87 - The auth token generated is eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZT3c0S2JEak0wX0hJZEdrZl9RaFJmS2M5cUhjNFdfOEJuaTkxbktGeWNrIn0.eyJqdGkiOiI5Mzk2NDczZC0yYmFjLTQyN2MtYThjMi1mZWNhMjA3YWIzMTMiLCJleHAiOjE1NTg2NTIxOTgsIm5iZiI6MCwiaWF0IjoxNTU4NjE2MTk4LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWRtaW4tY2xpIiwic3ViIjoiZjo4NzIzODJmYS05MTYxLTQ4ZjAtOTlhZC03MTQ4YWJiMzQ5MmQ6MzMxYzI1MWQtMGM1Ni00MmJiLWEyMGItZDFkMTZjYTgyNWU4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNjNlMWQ3ODEtYjcxYy00YjQ2LTk2OGYtOGZlZGMzOWJkYTY2IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlc291cmNlX2FjY2VzcyI6e30sIm5hbWUiOiJydW4xMiBLdW1hciIsInByZWZlcnJlZF91c2VybmFtZSI6InJ1bjEyIiwiZ2l2ZW5fbmFtZSI6InJ1bjEyIiwiZmFtaWx5X25hbWUiOiJLdW1hciJ9.uC349x5v2ZUwgMYax30-5AO7DDgrFH7kJQRbXm2h8JAi9dXLGbY0QNYY0rxUZwxjPlGjCTV39yKO9HLRtEWTqjoi5QtpnBCyf7dNd8Jd_t9I_lsB5jV5xXFY9PM0wgOhmfSIv_zJBdHziuyb4ajXG2En7HlPQOlRtYR0wec5aFxgwOlmxojggPIQB9nWJUkqrZjnTrNWEbyYU2rIZkCbQ_DTw4WcR0AH5Sd-NK4IikaR4jyqv_t8sHdmtAF5qHB2uPVrRxwLDJ03geSBUkHWakkPn_pseEb2YvGMn8KqFJMxYFhbVMZsc1czxDoviw2kBsmW9e_VEjblI_yxuywMpg
+2019-05-23 18:26:38 INFO  CsvManager:122 - CsvManager:prepareUserUpdateRequest: userRequest is [{request={externalIds=[{idType=channel_0001, provider=channel_0001, id=ext12}], userId=331c251d-0c56-42bb-a20b-d1d16ca825e8}}]
+2019-05-23 18:26:38 INFO  HttpClient:39 - HttpClient:post: uri = http://localhost:9000/v1/user/update
+2019-05-23 18:26:38 INFO  HttpClient:49 - HttpClient:post: statusCode = 400
+2019-05-23 18:26:38 INFO  HttpClient:50 - Response From userUpdate: {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:26:38:720+0530","params":{"resmsgid":null,"msgid":"eecf5daa-766a-4e09-aca9-ee61e2b637d6","err":"EXTERNALID_ASSIGNED_TO_OTHER_USER","status":"EXTERNALID_ASSIGNED_TO_OTHER_USER","errmsg":"External ID (id: ext12, idType: channel_0001, provider: channel_0001) already assigned to another user."},"responseCode":"CLIENT_ERROR","result":{}}
+2019-05-23 18:26:38 INFO  CsvManager:129 - Writing failed record Failed to Update Record with userName run12 and userId331c251d-0c56-42bb-a20b-d1d16ca825e8 and error Message is {"id":"api.user.update","ver":"v1","ts":"2019-05-23 18:26:38:720+0530","params":{"resmsgid":null,"msgid":"eecf5daa-766a-4e09-aca9-ee61e2b637d6","err":"EXTERNALID_ASSIGNED_TO_OTHER_USER","status":"EXTERNALID_ASSIGNED_TO_OTHER_USER","errmsg":"External ID (id: ext12, idType: channel_0001, provider: channel_0001) already assigned to another user."},"responseCode":"CLIENT_ERROR","result":{}}
+2019-05-23 18:26:38 INFO  CsvManager:56 - Connection Closed
