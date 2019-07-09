@@ -5,15 +5,18 @@ import java.sql.Timestamp;
 import java.util.*;
 
 /**
- * this is a cassandra helper class used for various utility methods. * provider, idtype,
- * externalid, createdby, createdon, lastupdatedby, lastupdatedon, originalexternalid,
- * originalidtype, originalprovider, userid
+ * this is a cassandra helper class used for various utility methods. provider, idtype, externalid,
+ * createdby, createdon, lastupdatedby, lastupdatedon, originalexternalid, originalidtype,
+ * originalprovider, userid
  *
  * @author anmolgupta
+ * @count 11 keyspace sunbird table : usr_external_identity
  */
 public class CassandraHelper {
 
-  public static final int minSize = 50000;
+  /** this variable is initialized so that list can easily handle the size of user.. */
+  public static final int initialiCapacity = 50000;
+
   /**
    * these methods will be used to convert resultSet into List of User entity Object.
    *
@@ -22,7 +25,7 @@ public class CassandraHelper {
    */
   public static List<User> getUserListFromResultSet(ResultSet resultSet) {
 
-    List<User> userList = new ArrayList<>(minSize);
+    List<User> userList = new ArrayList<>(initialiCapacity);
     Iterator<Row> iterator = resultSet.iterator();
     while (iterator.hasNext()) {
       Row row = iterator.next();
