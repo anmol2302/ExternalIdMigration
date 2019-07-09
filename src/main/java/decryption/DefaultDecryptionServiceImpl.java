@@ -1,6 +1,5 @@
 package decryption;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
 import javax.crypto.Cipher;
@@ -15,9 +14,9 @@ public class DefaultDecryptionServiceImpl implements DecryptionService {
     private final String ON = "ON";
     private Cipher c;
 
-    public DefaultDecryptionServiceImpl() {
+    public DefaultDecryptionServiceImpl(String sunbirdEncryption) {
         try {
-            encryptionKey = getSalt();
+            encryptionKey = sunbirdEncryption;
             Key key = generateKey();
             c = Cipher.getInstance(ALGORITHM);
             c.init(Cipher.DECRYPT_MODE, key);
@@ -29,7 +28,7 @@ public class DefaultDecryptionServiceImpl implements DecryptionService {
 
     @Override
     public String decryptData(String data) {
-        return decryptData(data);
+        return decrypt(data);
     }
 
     private String decrypt(String value) {
@@ -53,11 +52,4 @@ public class DefaultDecryptionServiceImpl implements DecryptionService {
         return new SecretKeySpec(keyValue, ALGORITHM);
     }
 
-    private String getSalt() {
-        String key = System.getenv("sunbird_encryption_key");
-        if (StringUtils.isBlank(key)) {
-            throw new RuntimeException("Invalid encryption key");
-        }
-        return key;
-    }
 }

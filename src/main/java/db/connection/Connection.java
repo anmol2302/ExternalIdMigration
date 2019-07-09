@@ -19,7 +19,7 @@ public interface Connection {
      * @param query
      * @return
      */
-    public ResultSet getResult(String query);
+    public ResultSet getRecords(String query);
 
 
     /**
@@ -36,4 +36,10 @@ public interface Connection {
      */
     public boolean deleteRecord(Map<String, String> compositeKeysMap);
 
+
+    /**
+     * this method is used to insert the user record into db
+     */
+
+    public ResultSet insertRecord(String query);
 }

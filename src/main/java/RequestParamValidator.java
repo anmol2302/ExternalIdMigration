@@ -3,13 +3,20 @@ import org.apache.http.util.TextUtils;
 import org.apache.log4j.Logger;
 
 public class RequestParamValidator {
-    static Logger logger = LoggerFactory.getLoggerInstance(ExternalIdDecryption.class.getName());
-    RequestParams requestParams = null;
 
-    public RequestParamValidator(RequestParams requestParams) {
+    private static Logger logger = LoggerFactory.getLoggerInstance(ExternalIdDecryption.class.getName());
+    private RequestParams requestParams;
+
+    private RequestParamValidator(RequestParams requestParams) {
         this.requestParams = requestParams;
     }
 
+
+    /**
+     * this method should used to get the instance of the class.
+     * @param requestParams
+     * @return
+     */
     public static RequestParamValidator getInstance(RequestParams requestParams) {
         return new RequestParamValidator(requestParams);
     }
@@ -20,7 +27,7 @@ public class RequestParamValidator {
      */
     public void validate() {
         isEnvValidated(requestParams);
-        logger.info(String.format("%s:%s: env variables verified", this.getClass().getSimpleName(), "validate"));
+        logger.info(String.format("%s:%s:env variables verified", this.getClass().getSimpleName(),"validate"));
 
     }
 
@@ -30,7 +37,7 @@ public class RequestParamValidator {
      * @param params
      * @return boolean
      */
-    public static boolean isInvalidEnv(String params) {
+    private static boolean isInvalidEnv(String params) {
         return TextUtils.isEmpty(params) ? true : false;
 
     }
@@ -43,7 +50,7 @@ public class RequestParamValidator {
      * @param requestParams
      * @return
      */
-    public static boolean isEnvValidated(RequestParams requestParams) {
+    private static boolean isEnvValidated(RequestParams requestParams) {
 
 
         if (isInvalidEnv(requestParams.getCassandraHost())) {

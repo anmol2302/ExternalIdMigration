@@ -16,16 +16,18 @@ public class CassandraConnection implements Connection {
     private static Session session;
     private String keyspaceName;
     private String host;
+    private String port;
 
-    public CassandraConnection(String host, String keyspaceName) {
+    public CassandraConnection(String host, String keyspaceName, String port) {
         this.keyspaceName = keyspaceName;
         this.host = host;
+        this.port = port;
         initializeConnection();
 
     }
 
     @Override
-    public ResultSet getResult(String query) {
+    public ResultSet getRecords(String query) {
         ResultSet resultSet = session.execute(query);
         return resultSet;
     }
@@ -47,13 +49,19 @@ public class CassandraConnection implements Connection {
                             Clause clause = QueryBuilder.eq(x.getKey(), x.getValue());
                             deleteWhere.and(clause);
                         });
-       ResultSet resultSet= session.execute(delete);
-       return resultSet.wasApplied();
+        ResultSet resultSet = session.execute(delete);
+        return resultSet.wasApplied();
+    }
+
+    @Override
+    public ResultSet insertRecord(String query) {
+        ResultSet resultSet = session.execute(query);
+        return resultSet;
+
     }
 
     /**
      * this method will initialize the cassandra connection
-     *
      */
     public void initializeConnection() {
         cluster = Cluster.builder().addContactPoint(host).build();

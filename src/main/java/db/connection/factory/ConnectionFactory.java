@@ -9,5 +9,5 @@ import db.connection.Connection;
 public interface ConnectionFactory {
 
 
-    Connection getConnection(String hostName, String keyspaceName);
+    Connection getConnection(String hostName, String keyspaceName,String port);
 }
