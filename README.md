@@ -1,11 +1,12 @@
 # ExternalIdDecryption
 
 # How to run
-  - require env variable to be set :
-        - "cassandra_host
-        - "sunbird_cassandra_keyspace
-        - "sunbird_cassandra_port
-        -  sunbird_encryption_key
+  - require env variable to be set : </br>
+  
+        - cassandra_host
+        - sunbird_cassandra_keyspace
+        - sunbird_cassandra_port
+        - sunbird_encryption_key
    
    - mvn clean compile assembly:single
    - cd target
