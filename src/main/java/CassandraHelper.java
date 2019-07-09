@@ -31,9 +31,5 @@ public class CassandraHelper {
             userList.add(user);
         }
         return userList;
-
-
     }
-
-
 }

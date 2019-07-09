@@ -11,6 +11,8 @@ public class EnvConstants {
 
     public static final String SUNBIRD_CASSANDRA_HOST = "cassandra_host";
     public static final String SUNBIRD_CASSANDRA_KEYSPACENAME = "sunbird_cassandra_keyspace";
+    public static final String SUNBIRD_CASSANDRA_PORT = "sunbird_cassandra_port";
+    public static final String SUNBIRD_ENCRYPTION_KEY = "sunbird_encryption_key";
     public static final String SUNBIRD_API_KEY = "sunbird_api_key";
     public static final String SUNBIRD_SSO_REALM = "sunbird_sso_realm";
     public static final String SUNBIRD_SSO_CLIENT_ID = "sunbird_sso_client_id";

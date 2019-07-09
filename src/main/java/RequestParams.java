@@ -2,55 +2,19 @@ public class RequestParams {
 
     private String cassandraHost;
     private String cassandraKeyspaceName;
-    private String baseUrl;
-    private String realm;
-    private String clientId;
-    private String apiKey;
-    private String authToken;
+    private String cassandraPort;
+    private String sunbirdEncryptionKey;
 
-    public RequestParams(String cassandraHost, String cassandraKeyspaceName, String baseUrl, String realm, String clientId, String apiKey, String authToken) {
-        this.cassandraHost = cassandraHost;
-        this.cassandraKeyspaceName = cassandraKeyspaceName;
-        this.baseUrl = baseUrl;
-        this.realm = realm;
-        this.clientId = clientId;
-        this.apiKey = apiKey;
-        this.authToken = authToken;
-    }
 
     public RequestParams() {
+
     }
 
-    public String getBaseUrl() {
-        return baseUrl;
-    }
-
-    public void setBaseUrl(String baseUrl) {
-        this.baseUrl = baseUrl;
-    }
-
-    public String getRealm() {
-        return realm;
-    }
-
-    public void setRealm(String realm) {
-        this.realm = realm;
-    }
-
-    public String getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
-    }
-
-    public String getApiKey() {
-        return apiKey;
-    }
-
-    public void setApiKey(String apiKey) {
-        this.apiKey = apiKey;
+    public RequestParams(String cassandraHost, String cassandraKeyspaceName, String cassandraPort, String sunbirdEncryptionKey) {
+        this.cassandraHost = cassandraHost;
+        this.cassandraKeyspaceName = cassandraKeyspaceName;
+        this.cassandraPort = cassandraPort;
+        this.sunbirdEncryptionKey = sunbirdEncryptionKey;
     }
 
     public String getCassandraHost() {
@@ -69,24 +33,30 @@ public class RequestParams {
         this.cassandraKeyspaceName = cassandraKeyspaceName;
     }
 
-    public String getAuthToken() {
-        return authToken;
+    public String getCassandraPort() {
+        return cassandraPort;
     }
 
-    public void setAuthToken(String authToken) {
-        this.authToken = authToken;
+    public void setCassandraPort(String cassandraPort) {
+        this.cassandraPort = cassandraPort;
     }
+
+    public String getSunbirdEncryptionKey() {
+        return sunbirdEncryptionKey;
+    }
+
+    public void setSunbirdEncryptionKey(String sunbirdEncryptionKey) {
+        this.sunbirdEncryptionKey = sunbirdEncryptionKey;
+    }
+
 
     @Override
     public String toString() {
         return "RequestParams{" +
                 "cassandraHost='" + cassandraHost + '\'' +
                 ", cassandraKeyspaceName='" + cassandraKeyspaceName + '\'' +
-                ", baseUrl='" + baseUrl + '\'' +
-                ", realm='" + realm + '\'' +
-                ", clientId='" + clientId + '\'' +
-                ", apiKey='" + apiKey + '\'' +
-                ", authToken='" + authToken + '\'' +
+                ", cassandraPort='" + cassandraPort + '\'' +
+                ", sunbirdEncryptionKey='" + sunbirdEncryptionKey + '\'' +
                 '}';
     }
 }
