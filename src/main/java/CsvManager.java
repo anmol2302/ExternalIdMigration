@@ -7,37 +7,34 @@ import java.util.*;
 public class CsvManager {
 
 
-    RequestParms parms;
+    RequestParams params;
     FileWriter fw;
     HttpClient client;
     BufferedReader br;
     static Logger logger = LoggerFactory.getLoggerInstance(CsvManager.class.getName());
 
 
-    public CsvManager(RequestParms parms) throws IOException {
-        this.parms = parms;
+    public CsvManager(RequestParams params) throws IOException {
+        this.params = params;
         fw = new FileWriter("failedRecords.txt");
-        client=new HttpClient(parms);
+        client = new HttpClient(params);
     }
+
     public void processFile() {
         String line = "";
         String cvsSplitBy = ",";
         try {
-            br = getReaderObject(parms.getCsvFileInput());
+            br = getReaderObject(null);
             if (br != null) {
                 while ((line = br.readLine()) != null) {
                     if (line.length() != 0) {
                         String[] values = line.split(cvsSplitBy);
-                        if (StringUtils.isNotBlank(values[1]) && StringUtils.isNotBlank(values[0])) {
-                            if (values.length == 4) {
-                                performUserUpdateRequest(values[0], values[1], values[2], values[3]);
-                            } else {
-                                logger.info("Cant perform request on record with userName " + values[0] + "and userId " + values[1]);
-                                logger.error("All params userName,userId,treasuryId,channel are mandatory!!!");
-                                continue;
-                            }
+                        if (validateUserObject(null)) {
+                              //  performUserUpdateRequest(values[0], values[1], values[2], values[3]);
+                            System.out.println("validated");
+
                         } else {
-                            logger.error("No treasuryId found for this " + values[0] +" skipping record");
+                            logger.error("No valid record  found for this " + values[0] + " skipping record");
                             continue;
                         }
 
@@ -46,7 +43,11 @@ public class CsvManager {
                     }
                 }
             }
-        } catch (Exception e) {
+        }catch (IllegalArgumentException ex){
+            logger.error(String.format("%s:%s:skipping record for userId because %s",this.getClass().getSimpleName(),"processFile",ex.getMessage()));
+
+        }
+        catch (Exception e) {
             logger.error("CsvManager:processFile: error in processCsv: " + e);
         } finally {
             if (br != null) {
@@ -82,18 +83,17 @@ public class CsvManager {
 
     public void performUserUpdateRequest(String userName, String userId, String treasuryId, String channel) {
         try {
-            String url = parms.getBaseUrl().concat("/api/user/v1/update");
+            String url = params.getBaseUrl().concat("/api/user/v1/update");
             String authToken = client.generateAuthToken(userName);
-            logger.info("The auth token generated is "+ authToken);
-            Map<String, Object> reqMap = prepareUserUpdateRequest(userId,treasuryId,channel);
+            logger.info("The auth token generated is " + authToken);
+            Map<String, Object> reqMap = prepareUserUpdateRequest(userId, treasuryId, channel);
             if (StringUtils.isNotBlank(authToken)) {
-                Map<String,Object> respMap=client.post(reqMap, url, authToken);
-                int statusCode= (Integer) respMap.get("statusCode");
-                if(statusCode!=200){
-                    writeFailedRecordToFile(userName,userId,(String) respMap.get("errMsg"));
-                }
-                else if(statusCode==200){
-                    logger.info("User successfully updated with userName: "+userName);
+                Map<String, Object> respMap = client.post(reqMap, url, authToken);
+                int statusCode = (Integer) respMap.get("statusCode");
+                if (statusCode != 200) {
+                    writeFailedRecordToFile(userName, userId, (String) respMap.get("errMsg"));
+                } else if (statusCode == 200) {
+                    logger.info("User successfully updated with userName: " + userName);
                 }
             } else {
                 logger.error("CsvManager: performUserUpdateRequest: Record with userName " + userName + " Cant be processed");
@@ -108,32 +108,64 @@ public class CsvManager {
 
     public Map<String, Object> prepareUserUpdateRequest(String userId, String treasuryId, String channel) {
 
-        Map<String,Object> reqMap=new HashMap<String, Object>();
-        HashMap<String,Object>request=new HashMap<String, Object>();
-        request.put("userId",userId);
-        List<Map<String,Object>>externalIdList=new ArrayList<Map<String, Object>>();
-        Map<String,Object> externaslIdMap=new HashMap<String, Object>();
-        externaslIdMap.put("id",treasuryId);
-        externaslIdMap.put("idType",channel);
-        externaslIdMap.put("provider",channel);
+        Map<String, Object> reqMap = new HashMap<String, Object>();
+        HashMap<String, Object> request = new HashMap<String, Object>();
+        request.put("userId", userId);
+        List<Map<String, Object>> externalIdList = new ArrayList<Map<String, Object>>();
+        Map<String, Object> externaslIdMap = new HashMap<String, Object>();
+        externaslIdMap.put("id", treasuryId);
+        externaslIdMap.put("idType", channel);
+        externaslIdMap.put("provider", channel);
         externalIdList.add(externaslIdMap);
-        request.put("externalIds",externalIdList);
-        reqMap.put("request",request);
-        logger.info("CsvManager:prepareUserUpdateRequest: userRequest is "+ Collections.singletonList(reqMap.toString()));
+        request.put("externalIds", externalIdList);
+        reqMap.put("request", request);
+        logger.info("CsvManager:prepareUserUpdateRequest: userRequest is " + Collections.singletonList(reqMap.toString()));
         return reqMap;
     }
 
-    public void writeFailedRecordToFile(String userName,String userId,String errMsg){
-        try{
-            String query="Failed to Update Record with userName "+ userName +" and userId"+ userId +" and error Message is "+ errMsg;
-            logger.info("Writing failed record "+ query);
-            fw.write(query+"\n");
-        }
-        catch (Exception e){
+    public void writeFailedRecordToFile(String userName, String userId, String errMsg) {
+        try {
+            String query = "Failed to Update Record with userName " + userName + " and userId" + userId + " and error Message is " + errMsg;
+            logger.info("Writing failed record " + query);
+            fw.write(query + "\n");
+        } catch (Exception e) {
             logger.error("CsvManager: writeFailedRecordToFile: Something went wrong in writing file");
         }
-
-
     }
+
+    public boolean validateUserObject(User user) {
+
+
+        boolean isUserValid=true;
+        if (user.getIdType() == null) {
+            isUserValid=false;
+        }
+        if (user.getUserId() == null) {
+            isUserValid=false;
+
+        }
+        if (user.getExternalId() == null) {
+            isUserValid=false;
+
+        }
+        if (user.getOriginalexternalid() == null) {
+            isUserValid=false;
+
+        }
+        if (user.getOriginalidtype() == null) {
+            isUserValid=false;
+
+        }
+        if (user.getProvider() == null) {
+            isUserValid=false;
+
+        }
+        if (user.getOriginalprovider() == null) {
+            isUserValid=false;
+
+        }
+        return true;
+    }
+
 
 }

@@ -8,7 +8,6 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPatch;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -25,12 +24,12 @@ public class HttpClient {
     private static Logger logger = LoggerFactory.getLoggerInstance(HttpClient.class.getName());
 
     public String apiKey;
-    RequestParms parms;
-    public HttpClient(RequestParms parms) {
+    RequestParams parms;
+    public HttpClient(RequestParams parms) {
         this.parms=parms;
     }
 
-    public Map<String,Object> post(Map<String, Object> requestBody, String uri,String authToken) throws IOException {
+    public Map<String,Object> post(Map<String, Object> requestBody, String uri, String authToken) throws IOException {
         logger.debug("HttpClient: post called");
         Map<String,Object> responseMap=new HashMap<>();
         try {
@@ -96,7 +95,7 @@ public class HttpClient {
                 }
             }
         } catch (Exception e) {
-            logger.error("Error Occured in  getting auth token with username " + userName+"  and the error occured is "+ e);
+            logger.error("Error Occurred in  getting auth token with username " + userName+"  and the error occurred is "+ e);
         }
         return "";
     }
